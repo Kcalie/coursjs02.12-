@@ -29,7 +29,7 @@ function compte_a_rebours() {
         total_secondes = Math.abs(total_secondes);
     }
 // pour joué le son a la fin du compte a rebours
-    if(total_secondes == 0){ // == est strictement =
+    if(total_secondes == 0){ // == est strictement egal
         let sonFini = document.createElement('audio');
         sonFini.src = "assets/son/gagne.mp3"
         sonFini.play()
