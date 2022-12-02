@@ -1,12 +1,39 @@
+// couleur background et text
+var i = 0;
+var j = 0;
+function change() {
+    var doc = document.getElementById("background");
+    var color = ["black", "blue", "brown", "green"];
+    doc.style.backgroundColor = color[j];
+    j = (j + 1) % color.length;
+}
+setInterval(change, 1000);
+
+function changec() {
+    var doc = document.getElementById("background");
+    var color = ["red", "white", "black", "gainsboro"];
+    doc.style.color = color[i];
+    i = (i + 1) % color.length;
+}
+setInterval(changec, 1000);
+// FIN couleur background et text
+
 function compte_a_rebours() {
     let date_actuelle = new Date();
     let date_fin = new Date('Dec 2 17:00:00 2022');
-    let total_secondes = (date_fin-date_actuelle)/1000;
+    let total_secondes = Math.floor((date_fin-date_actuelle)/1000);
     let prefixe = "le week-end est dans :";
 
     if(total_secondes < 0){
         prefixe = "vous devriez deja etre partie depuis";
         total_secondes = Math.abs(total_secondes);
+    }
+// pour joué le son
+    if(total_secondes == 0){
+        let sonFini = document.createElement('audio');
+        sonFini.src = "assets/son/gagne.mp3"
+        sonFini.play()
+        return false;
     }
 
     if(total_secondes > 0){
@@ -59,5 +86,16 @@ function compte_a_rebours() {
     }
     // actualiser le compte a rebours
     let actualisation = setTimeout("compte_a_rebours();",1000);
+    
 }
+
 compte_a_rebours();
+
+
+/*
+        // SON
+        let sonFini = document.createElement('audio');
+        sonFini.src = "assets/son/gagne.mp3"
+        sonFini.play()
+        return;
+*/
