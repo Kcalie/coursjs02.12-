@@ -8,10 +8,43 @@
     <title>Partie de l'Examen</title>
 </head>
 <body>
+
+    <!--SERA DEMANDER A L'EXAMEN-->
+
     <h1>Verification en Javascript</h1>
     <form name="verif" id="verif" method="post">
 
-        
+        <p>
+            <label>Nom</label>
+            <input type="text" name="nom" id="nom" placeholder="nom">
+        </p>
+        <p>
+            <label>prenom</label>
+            <input type="text" name="prenom" id="prenom" placeholder="prenom">
+        </p>
+        <p>
+            <label>tel</label>
+            <input type="tel" name="telephone" id="telephone" placeholder="telephone">
+        </p>
+        <p>
+            <label>email</label>
+            <input type="email" name="email" id="email" placeholder="email">
+        </p>
+
+        <p>
+            <label>sujet</label>
+            <input type="text" name="sujet" id="sujet" placeholder="sujet">
+        </p>
+        <p>
+            <label>message</label>
+            <textarea name="message" name="message" id="message">message</textarea>
+        </p>
+
+        <p>
+            <button type="submit" name="submit" id="submit">Envoyer</button>
+            <button type="reset" name="reset" id="reset">Reset</button>
+        </p>
     </form>
+    <script type="text/javascript" src="assets/js/verif.js"></script>
 </body>
 </html>
