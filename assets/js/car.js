@@ -1,8 +1,8 @@
 // couleur background et text
-var i = 0;
+/*var i = 0;
 var j = 0;
 function change() {
-    var doc = document.getElementById("background");
+    var doc = document.getElementsByTagName('body')[0];
     var color = ["black", "blue", "brown", "green"];
     doc.style.backgroundColor = color[j];
     j = (j + 1) % color.length;
@@ -10,26 +10,26 @@ function change() {
 setInterval(change, 1000);
 
 function changec() {
-    var doc = document.getElementById("background");
+    var doc = document.getElementsByTagName('body')[0];
     var color = ["red", "white", "black", "gainsboro"];
     doc.style.color = color[i];
     i = (i + 1) % color.length;
 }
-setInterval(changec, 1000);
+setInterval(changec, 1000);*/
 // FIN couleur background et text
 
 function compte_a_rebours() {
     let date_actuelle = new Date();
     let date_fin = new Date('Dec 2 17:00:00 2022');
-    let total_secondes = Math.floor((date_fin-date_actuelle)/1000);
+    let total_secondes = Math.floor((date_fin-date_actuelle)/1000);// enlever les virgules sur les nombres
     let prefixe = "le week-end est dans :";
 
     if(total_secondes < 0){
         prefixe = "vous devriez deja etre partie depuis";
         total_secondes = Math.abs(total_secondes);
     }
-// pour joué le son
-    if(total_secondes == 0){
+// pour joué le son a la fin du compte a rebours
+    if(total_secondes == 0){ // == est strictement =
         let sonFini = document.createElement('audio');
         sonFini.src = "assets/son/gagne.mp3"
         sonFini.play()
@@ -91,11 +91,3 @@ function compte_a_rebours() {
 
 compte_a_rebours();
 
-
-/*
-        // SON
-        let sonFini = document.createElement('audio');
-        sonFini.src = "assets/son/gagne.mp3"
-        sonFini.play()
-        return;
-*/
