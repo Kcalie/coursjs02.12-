@@ -35,10 +35,16 @@ const formulaire = document.getElementById('verif');
 formulaire.addEventListener('submit',verifForm);
 // pour notre champs message
 const verif_message = document.getElementById('message');
-verif_message.addEventListener('blur',function(){
+verif_message.addEventListener('click',function(){
     if(this.value == 'votre message') {
         this.value = "";
     } else {
         this.value = "votre message";
     }
+});
+verif_message.addEventListener('keyup',function(){
+    let str_message = verif_message.value;
+    const nombre_car = document.getElementById('cmax').value;
+    let operation = nombre_car-str_message.length;
+    document.getElementById('number').value = operation;
 });
