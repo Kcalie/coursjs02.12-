@@ -31,17 +31,25 @@ function verifForm() {
     }
     return true;
 }
-const formulaire = document.getElementById('verif');
-formulaire.addEventListener('submit',verifForm);
-// pour notre champs message
-const verif_message = document.getElementById('message');
-verif_message.addEventListener('click',function(){
+function verifMessage(){
     if(this.value == 'votre message') {
         this.value = "";
-    } else {
-        this.value = "votre message";
+    } 
+    else if(this.value == "")
+    {
+        this.value = "Votre message";
     }
-});
+}
+
+const formulaire = document.getElementById('verif');
+formulaire.addEventListener('submit',verifForm);
+
+// pour notre champs message
+const verif_message = document.getElementById('message');
+verif_message.addEventListener('click',verifMessage);
+
+// des qu'on quitte le champ
+verif_message.addEventListener('blur',verifMessage);
 verif_message.addEventListener('keyup',function(){
     let str_message = verif_message.value;
     const nombre_car = document.getElementById('cmax').value;
